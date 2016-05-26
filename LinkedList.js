@@ -1,5 +1,5 @@
 // Constructors
-var List = function(array) {
+var List = function() {
   this.head = null
 }
 List.cons = function(head, tail) {
