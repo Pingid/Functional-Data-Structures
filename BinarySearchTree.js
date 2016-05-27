@@ -30,6 +30,18 @@ BSTree.prototype.contains = function(value) {
 }
 
 BSTree.prototype.remove = function(value) {
+  if (value !== this.value) {
+    if (value > this.value && this.right) return BSTree.cons(this.value, this.left, this.right.remove(value));
+    else if (value < this.value && this.left) return BSTree.cons(this.value, this.left.remove(value), this.right);
+    return null
+  } else if (value === this.value) {
+    if (!this.left) {
+      if (!this.right) return null;
+      return BSTree.cons(this.right.value, this.right.left, this.right.right);
+    } else if (!this.right) {
+      return BSTree.cons(this.left.value, this.left.left, this.left.right);
+    }
+  }
   // // Left value matches
   // if (value === this.left.value) {
   //   // Left has no children

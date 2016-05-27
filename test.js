@@ -16,7 +16,7 @@ function sieve(s) {
 
 console.log(
   JSON.stringify(
-    BSTree.cons(10, null, null).add(8).add(5).add(3).add(12).remove(5),
+    BSTree.cons(10, null, null).add(8).add(5).add(3).add(12).remove(8),
     null,
     2
   )
